@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <span> Country Code </span></ion-title>
+    <ion-buttons first>
+      <button ion-button large (click)="cancel()">
+        <ion-icon name="arrow-back" style="font-size:20px; color: white;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content no-padding class="idolContent ">
+  <ion-list no-padding style="margin-top: 5px;">
+    <ion-searchbar (ionInput)="filter($event)"></ion-searchbar>
+    <ion-item-sliding *ngFor="let country of countrylist; let i=index;" class="itemStyle">
+      <button ion-item detail-none (click)="selectCountry(country)"
+        style="background:transparent; border-bottom: none;">
+        <ion-row>
+          <ion-col align-self-center col-2>
+            <span class="flag-icon flag-icon-{{country.flag}}"></span>
+          </ion-col>
+          <ion-col align-self-left style="white-space: normal;">
+            <h3 style="color:white;"> {{country.info}}</h3>
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>

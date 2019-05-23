@@ -1,0 +1,203 @@
+<ion-header no-header>
+
+</ion-header>
+
+<ion-content no-padding (swipeleft)="swipeLeft()" (swiperight)="swipeRight()">
+  <div class='profile-header'>
+    <h5>CHECK YOUR DATA</h5>
+    <div class="avatar-section">
+      <div class="editfbPic">
+        <img src={{profilepic}} alt="profile-avatar" onerror="this.src='assets/images/profile-default.png'">
+        <ion-icon name="camera" (click)="fullPic(profilepic)" class="camera-icon"></ion-icon>
+      </div>
+      <P class="user-name">{{name}}</P>
+      <p class="user-desc">Check what info you want to share with others and you are all set.</p>
+    </div>
+  </div>
+  <div class="profile-body">
+    <ion-grid (tap)="changed()" class="profile-grid">
+      <ion-row class="header-row">
+        <ion-col no-padding col>
+          <h5>Personal Data</h5>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2>
+          <img src='assets/icon/phone-number-icon.png' />
+        </ion-col>
+        <ion-col col-8>
+          <ion-input (input)="changed()" class="idolInput" type="tel" [(ngModel)]="phone"
+            placeholder="+ Add Phone Number"></ion-input>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="sharePhone" class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2>
+          <img src='assets/icon/email-icon.png' />
+        </ion-col>
+        <ion-col col-8>
+          <ion-input (input)="changed()" class="idolInput" type="email" [(ngModel)]="email" placeholder="+ Add Email">
+          </ion-input>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="shareEmail" class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="openHometown()">
+        <ion-col col-2>
+          <img src='assets/icon/hometown-icon.png' />
+        </ion-col>
+        <ion-col col-8>
+          <p *ngIf='location'>{{location}}</p>
+          <p *ngIf='!location'><a>+ Add Hometown</a></p>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="shareLocation" class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2>
+          <img src='assets/icon/birthday-icon.png' />
+        </ion-col>
+        <ion-col col-8>
+          <ion-datetime class="idolInput" displayFormat="MMMM DD YYYY" [(ngModel)]="birthday"
+            placeholder="+ Add Birthday">
+          </ion-datetime>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="shareBirthday" class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="openWebsite()">
+        <ion-col col-2>
+          <img src='assets/icon/website-icon.png' />
+        </ion-col>
+        <ion-col col-8>
+          <p *ngIf='website'>{{website}}</p>
+          <p *ngIf='!website'><a>+ Add Website</a></p>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="shareWebsite" class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="openBio()">
+        <ion-col col-2>
+          <img src='assets/icon/bio-icon.png' />
+        </ion-col>
+        <ion-col col-8>
+          <p *ngIf='profile'>{{profile}}</p>
+          <p *ngIf='!profile'><a>+ Add Bio</a></p>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="header-row">
+        <ion-col no-padding col>
+          <h5>Social Media Profile</h5>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2 (click)="openSocialModal('Facebook')">
+          <img src='assets/icon/socialFacebook.png' />
+        </ion-col>
+        <ion-col col-8 (click)="openSocialModal('Facebook')">
+          <p>Facebook Connect</p>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="shareFacebook" (ionChange)="openSocialModal('Facebook', 1)"
+            class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2 (click)="openSocialModal('Twitter')">
+          <img src='assets/icon/socialTwitter.svg' />
+        </ion-col>
+        <ion-col col-8 (click)="openSocialModal('Twitter')">
+          <p>Twitter Connect</p>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="shareTwitter" (ionChange)="openSocialModal('Twitter', 1)"
+            class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2 (click)="openSocialModal('Linkedin')">
+          <img src='assets/icon/linkedin-icon.png' />
+        </ion-col>
+        <ion-col col-8 (click)="openSocialModal('Linkedin')">
+          <p>Linkedin Connect</p>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="shareLinkedin" (ionChange)="openSocialModal('Linkedin', 1)"
+            class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2 (click)="openSocialModal('Snapchat')">
+          <img src='assets/icon/snapchat-icon.png' />
+        </ion-col>
+        <ion-col col-8 (click)="openSocialModal('Snapchat')">
+          <p>Snapchat Connect</p>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="shareSnapchat" (ionChange)="openSocialModal('Snapchat', 1)"
+            class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2 (click)="openSocialModal('Youtube')">
+          <img src='assets/icon/youtube-icon.png' />
+        </ion-col>
+        <ion-col col-8 (click)="openSocialModal('Youtube')">
+          <p>Youtube Connect</p>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="shareYoutube" (ionChange)="openSocialModal('Youtube', 1)"
+            class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2 (click)="openSocialModal('Instagram')">
+          <img src='assets/icon/instagram-icon.png' />
+        </ion-col>
+        <ion-col col-8 (click)="openSocialModal('Instagram')">
+          <p>Instagram Connect</p>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="shareInstagram" (ionChange)="openSocialModal('Instagram', 1)"
+            class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2 (click)="openSocialModal('Pinterest')">
+          <img src='assets/icon/pinterest-icon.png' />
+        </ion-col>
+        <ion-col col-8 (click)="openSocialModal('Pinterest')">
+          <p>Pinterest Connect</p>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="sharePinterest" (ionChange)="openSocialModal('Pinterest', 1)"
+            class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-2 (click)="openSocialModal('Soundcloud')">
+          <img src='assets/icon/soundcloud-icon.png' />
+        </ion-col>
+        <ion-col col-8 (click)="openSocialModal('Soundcloud')">
+          <p>SoundCloud Connect</p>
+        </ion-col>
+        <ion-col col-2>
+          <ion-toggle checked="true" [(ngModel)]="shareSoundcloud" (ionChange)="openSocialModal('Soundcloud', 1)"
+            class="idol-toggle"></ion-toggle>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <button class="standard-btn" ion-button (tap)="save()">GET STARTED</button>
+    <button class="no-background-btn" ion-button (tap)="clickskip()">SKIP</button>
+  </div>
+</ion-content>

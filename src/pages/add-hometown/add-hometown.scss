@@ -1,0 +1,42 @@
+page-add-hometown {
+  ion-content {
+    height: 325px;
+  }
+
+  ion-navbar.toolbar {
+    height: 65px;
+
+    .toolbar-background {
+      background: #fff;
+      border-width: 0px !important;
+    }
+  }
+
+  .home-searchbar {
+    position: absolute;
+    top: -17px;
+    left: 20px;
+    width: calc(100vw - 30px);
+
+    .searchbar-input-container {
+      .searchbar-search-icon {
+        display: none;
+      }
+
+      .searchbar-input {
+        padding: 0 15px;
+        color: #000;
+        background: transparent;
+      }
+
+      .searchbar-clear-icon {
+        background-image: url('../assets/icon/search-clear-icon.png');
+        filter: unset;
+      }
+    }
+  }
+
+  .town-list-icon {
+    padding-top: 10px;
+  }
+}

@@ -1,0 +1,26 @@
+<ion-header class="idol-header">
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button navPop large (click)="closeModal()">
+        <ion-icon class="idolIcon" name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Validate Phone</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-list no-line class="standard-list">
+    <ion-list-header>
+      <p class="validate-desc">Enter the SMS verification code below that was sent to your mobile phone.</p>
+    </ion-list-header>
+    <ion-item no-line>
+      <ion-input class="cssphone" type="number" placeholder="Please enter Verify Code" [(ngModel)]="enteredCode"
+        text-center>
+      </ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button class="no-background-btn" ion-button (click)="resendCode()">Resend confirmation code</button>
+  <button class="standard-btn" ion-button (tap)="matching()">CONFIRM</button>
+</ion-content>

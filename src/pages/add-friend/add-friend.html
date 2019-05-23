@@ -1,0 +1,36 @@
+<ion-header class="idol-header">
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button navPop large>
+        <ion-icon class="idolIcon" name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Add Friends</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addContacts()">
+        <ion-icon slot="icon-only" name="friends" class="add-friends-icon"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-searchbar (ionInput)="searchFriends($event)" placeholder="Search friends" no-padding></ion-searchbar>
+  <ion-list no-padding no-lines>
+    <ion-item *ngFor="let item of listPhone">
+      <ion-avatar item-left tappable (click)="goProfile(item)">
+        <img *ngIf="item.photourl" src="{{item.photourl}}" onerror="this.src='assets/images/profile-default.png'">
+        <img *ngIf="!item.photourl" src="assets/images/profile-default.png" />
+      </ion-avatar>
+      <div>
+        <h2 tappable (click)="goProfile(item)">{{item.username}}</h2>
+        <ion-icon *ngIf="item.done == '0'" name="add-circle" tappable (click)="addFriend(item)"></ion-icon>
+        <ion-icon *ngIf="item.done == '1'" name="checkmark-circle" style="color: #54ff00"></ion-icon>
+      </div>
+    </ion-item>
+    <div class='noresult' *ngIf="listPhone.length == 0">
+      <p>There is no search result.</p>
+    </div>
+  </ion-list>
+
+</ion-content>

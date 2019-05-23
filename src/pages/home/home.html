@@ -1,0 +1,7 @@
+<ion-tabs id="tabs" [selectedIndex]="defaulSelectedIndex" no-shadow>
+  <ion-tab tabTitle="Profile" tabIcon="profileIcon" [root]="EditingProfilePage" [rootParams]="mainParams"></ion-tab>
+  <ion-tab tabIcon="codeIcon" [root]="ProfilePage" [rootParams]="mainParams"></ion-tab>
+  <!-- <ion-tab tabTitle = "Places" tabIcon ="placeIcon" [root]="PlacePage"></ion-tab> -->
+  <ion-tab tabTitle="Contacts" tabIcon="contactIcon" [root]="ContactListPage" [rootParams]="mainParams"
+    [tabBadge]="newContactGarbage" tabBadgetStyle="badge-assertive"></ion-tab>
+</ion-tabs>

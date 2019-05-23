@@ -1,0 +1,29 @@
+page-countrycode-modal {
+    .idolContent{
+        background-image:  url("../assets/images/app_background.png");
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size:cover;
+    }
+    .idolTitle {
+        color: white  !important;
+        text-align: center ;
+        font-size: 1.4em;
+        position: absolute;
+        margin-top: 20px;
+        margin-left: calc(50% - 80px);
+    }
+    .itemStyle{
+        background: transparent !important;
+    }
+    .toolbar-background {
+        background-color: #223f9f;
+      }
+
+      .toolbar-title{
+          color: white;
+      }
+
+}
+
+

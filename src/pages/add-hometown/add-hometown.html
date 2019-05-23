@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button navPop large>
+        <ion-icon class="idolIcon" name="arrow-back"></ion-icon>
+      </button>
+      <ion-searchbar #searchbar [(ngModel)]="searchHometown" placeholder="Seach" class="home-searchbar"
+        (ionInput)="searchPlace()">
+      </ion-searchbar>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p class="sub-title" no-margin>Top Results</p>
+  <ion-grid no-padding margin-top>
+    <ion-row *ngFor="let town of townList | hometownFilter:searchHometown" (click)="selectHometown(town)" tappable>
+      <ion-col col-2>
+        <img src="{{hometownIcon}}" class="town-list-icon" />
+      </ion-col>
+      <ion-col col-10>
+        <p>{{town.description}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

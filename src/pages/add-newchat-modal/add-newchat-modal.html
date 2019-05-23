@@ -1,0 +1,35 @@
+<ion-header class="idol-header">
+  <ion-navbar>
+    <ion-title>New Messages</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="cancel()" color="light">Cancel</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class="idolContent" (swiperight)="swipeRight()">
+  <ion-searchbar (ionInput)="filter($event)"></ion-searchbar>
+  <ion-list class="ion-alpha-scroll" [virtualScroll]="myContacts" [approxItemHeight]="'130px'" [headerFn]="getHeader"
+    #virtualScroll>
+    <ion-item-divider class="dividerStyle" *virtualHeader="let header">
+      {{header}}
+    </ion-item-divider>
+    <ion-item-sliding class="itemStyle" (tap)="gotoChat(contact)" *virtualItem="let contact">
+      <button ion-item detail-none style="background:transparent; border-bottom: none;">
+        <ion-row>
+          <ion-col justify-content-start col-3>
+            <img src={{contact.contactphotourl}} alt="contact-avatar"
+              onerror="this.src='assets/images/profile-default.png'">
+          </ion-col>
+          <ion-col align-self-center>
+            <h2>{{contact.contactname}}</h2>
+          </ion-col>
+          <ion-col align-self-center col-3>
+            <h4 class="idolNewContact" *ngIf="contact.contactnew">New</h4>
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-item-sliding>
+    <div class="bottomSpace"></div>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header class="idol-header">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="backupDialog()">
+        <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Contacts</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="chatlist()">
+        <ion-icon slot="icon-only" name="chatbubbles"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class="idolContent" (swiperight)="swipeRight()" no-bounce>
+  <ion-searchbar (ionInput)="filter($event)"></ion-searchbar>
+  <ion-list class="ion-alpha-scroll" [virtualScroll]="myContacts" [approxItemHeight]="'130px'" [headerFn]="getHeader">
+    <ion-item-divider class="dividerStyle" *virtualHeader="let header">
+      {{header}}
+    </ion-item-divider>
+    <ion-item-sliding class="itemStyle" (tap)="details(contact)" *virtualItem="let contact">
+      <button ion-item detail-none style="background:transparent; border-bottom: none;">
+        <ion-row>
+          <ion-col justify-content-start col-3>
+            <img src={{contact.contactphotourl}} alt="contact-avatar"
+              onerror="this.src='assets/images/profile-default.png'">
+          </ion-col>
+          <ion-col align-self-center>
+            <h2>{{contact.contactname}}</h2>
+          </ion-col>
+          <ion-col align-self-center col-3>
+            <h4 class="idolNewContact" *ngIf="contact.contactnew">New</h4>
+          </ion-col>
+        </ion-row>
+      </button>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deleteContact(contact.contactid, i)">
+          <ion-icon name="trash" style="font-size:20px;"></ion-icon>
+        </button>
+        <button ion-button color="secondary" (click)="addPhone(contact.contactid, i)">
+          <ion-icon name="contacts" style="font-size:20px;"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <div class="bottomSpace"> </div>
+  </ion-list>
+</ion-content>

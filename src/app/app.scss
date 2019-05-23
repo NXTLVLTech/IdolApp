@@ -1,0 +1,440 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+ion-icon {
+  &[class*="custom-"] {
+    mask-size: contain;
+    mask-position: 50% 70%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  }
+
+  &[class*="custom-soundcloud"] {
+    mask-image: url(../assets/images/soundcloud.svg);
+  }
+
+}
+
+/* Common Style */
+
+[idolBlue] {
+  color: #3c80ea !important;
+}
+
+[no-line] {
+  border: none !important;
+}
+
+.button-ios {
+  background-color: transparent;
+}
+
+.button-md {
+  background-color: transparent;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0);
+}
+
+.idolInput {
+  width: 100%;
+  padding-left: 0;
+  color: #ffffff;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+
+  .text-input {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .text-input::placeholder {
+    color: #ffffff;
+  }
+}
+
+.idol-header.header {
+  .toolbar {
+    height: 65px;
+
+    .toolbar-background {
+      background: $bgColor;
+      border-bottom: none;
+    }
+
+    .toolbar-title {
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1.666667px;
+    }
+
+    .back-button.show-back-button {
+      display: none;
+    }
+
+    .idolIcon {
+      color: #fff;
+      font-size: 22px;
+      padding-left: 8px;
+    }
+  }
+}
+
+.list {
+  .item.item-divider {
+    color: #6c7b8a;
+    background: #f5f7f7;
+  }
+
+  ion-item-sliding.itemStyle {
+    background: #ffffff;
+
+    ion-label {
+      h2 {
+        color: #3b3b4d;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21px;
+      }
+    }
+
+    ion-item-options ion-icon {
+      color: #3b3b4d;
+    }
+
+    .item img {
+      width: 60px;
+      height: 60px;
+      display: block;
+      border-radius: 50%;
+    }
+  }
+
+}
+
+button.standard-btn {
+  width: calc(100% - 40px);
+  height: 55px;
+  margin: 10px 20px;
+  border-radius: 28px;
+  background-image: linear-gradient(161deg, #00D1F1, #4377E9);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button.no-background-btn {
+  width: calc(100% - 40px);
+  height: 50px;
+  margin: 0 20px;
+  font-size: 12px;
+  border-radius: 28px;
+  color: #3b3b4d;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ion-ios-arrow-back:before {
+  content: "\f27d";
+}
+
+.background {
+  background-image: linear-gradient(153deg, #0D1F3B, #1B2E4B);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: cover;
+}
+
+.logo-title {
+  position: absolute;
+  top: 8px;
+  left: calc(50% - 25px);
+}
+
+.searchbar {
+  height: 65px;
+
+  .searchbar-input-container {
+    .searchbar-search-icon {
+      background-image: url('../assets/images/search-glass-icon.png');
+      background-size: 16px;
+    }
+
+    .searchbar-input {
+      color: #6c7b8a;
+    }
+  }
+}
+
+.standard-list {
+  .item.item-block {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-top: 0;
+
+    .item-inner {
+      padding-right: 0;
+
+      ion-input {
+        height: 55px;
+        margin: 10px 20px;
+        background: rgba(20, 15, 38, 0.65);
+        border-radius: 8px;
+        color: #fff;
+
+        input {
+          width: calc(100% - 20px);
+          height: 32px;
+          padding-left: 16px;
+        }
+      }
+    }
+  }
+}
+
+.sub-title {
+  color: #6c7b8a;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.heading3 {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.636364px;
+}
+
+ion-modal ion-backdrop {
+  visibility: visible;
+  z-index: 0;
+}
+
+ion-modal.inset-modal {
+  background-color: rgba(0, 0, 0, .5) !important;
+  transition: opacity .25s ease-in-out;
+  padding: 0vh 0vw !important;
+}
+
+// ion-modal.code-modal {
+//   background-color: rgba(0, 0, 0, .2) !important;
+//   transition: opacity 3s ease-in-out;
+//   padding: 0 !important;
+// }
+ion-modal.code-modal {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.25s, opacity 0.75s linear;
+}
+
+ion-modal.code-modal.show-page {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.iconAlert {
+  .alert-wrapper {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .alert-sub-title {
+    color: #3b3b4d;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: -0.41px;
+  }
+
+  .alert-message {
+    color: #3b3b4d;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.08px;
+  }
+
+  .alert-button-group {
+    .alert-button {
+      color: #3b3b4d;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 23px;
+      text-align: center;
+      letter-spacing: -0.41px;
+    }
+
+    .alert-button:last-child {
+      color: #3c80ea;
+    }
+  }
+}
+
+.tabs {
+  .tabbar {
+    width: 100%;
+    height: calc(90px + env(safe-area-inset-bottom));
+    border-top: 0px solid rgba(0, 0, 0, 0);
+    background: transparent;
+    background-image: url(../assets/images/tab_bg.png) !important;
+    background-size: cover;
+    background-position: center top;
+    padding-top: 40px;
+  }
+}
+
+.tabs-ios {
+  .tab-button {
+    color: #140f26;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .tab-button-icon {
+    margin-top: 2px;
+    margin-bottom: 1px;
+    min-width: 30px;
+    height: 30px;
+    color: #8c8c8c;
+  }
+
+  .tab-button-text {
+    margin-top: 1px;
+    margin-bottom: 5px;
+  }
+
+  .menu-open .tab-show {
+    opacity: 0.2;
+  }
+}
+
+.tabs-md {
+  .tab-button-icon {
+    margin-top: 2px;
+    margin-bottom: 1px;
+    min-width: 30px;
+    height: 30px;
+    color: #8c8c8c;
+  }
+
+  .tab-button-text {
+    margin-top: 1px;
+    margin-bottom: 5px;
+    min-height: 11px;
+    font-size: 12px;
+  }
+
+  .tab-button[aria-selected=false] .ion-md-contactIcon {
+    content: url(../assets/images/@3x-Contacts-Default.png);
+  }
+
+  .tab-button[aria-selected=false] .ion-md-codeIcon {
+    content: url(../assets/images/@3x-Code-Default.png);
+  }
+
+  .tab-button[aria-selected=false] .ion-md-profileIcon {
+    content: url(../assets/images/profile-default.png);
+  }
+
+}
+
+.badge-ios {
+  border-radius: 10px;
+  color: #fff;
+  background-color: red;
+}
+
+/* toggle style */
+.idol-toggle.toggle .toggle-inner {
+  width: 20px;
+  height: 20px;
+  top: -8px;
+  left: 0;
+  background: #ffffff;
+  border: 2px solid #e0e4eb;
+  box-shadow: none;
+}
+
+.idol-toggle.toggle .toggle-icon {
+  height: 2px;
+  width: 45px;
+  margin-top: 20px;
+  background-color: #e0e4eb !important;
+}
+
+.idol-toggle.toggle.toggle-checked .toggle-inner {
+  left: 9px;
+  border: 2px solid #3c80ea;
+}
+
+/* Subscribe Alert Style */
+.subscribe-alert {
+  .alert-sub-title {
+    color: #3b3b4d;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: -0.41px;
+  }
+
+  button.alert-button:nth-child(2) {
+    color: #3c80ea;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: -0.41px;
+  }
+
+  .alert-wrapper .alert-message {
+    padding-top: 12px;
+    padding-bottom: 32px;
+    color: #3b3b4d;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.08px;
+  }
+}

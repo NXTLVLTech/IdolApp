@@ -1,0 +1,29 @@
+<ion-header no-header>
+  <div>
+    <button ion-button large (click)="gotoback()">
+      <ion-icon class="idolIcon" name="arrow-back"></ion-icon>
+    </button>
+  </div>
+</ion-header>
+
+<ion-content class="background">
+  <div class="logo-title">
+    <img alt="logo" src="assets/images/logo-icon.svg">
+  </div>
+  <ion-list no-line class="standard-list">
+    <ion-list-header>
+      <h1>SMS VERIFICATION</h1>
+      <p>Idol needs to verify your identity. Please enter your phone number.</p>
+    </ion-list-header>
+    <ion-item mt-3>
+      <ion-input type="text" [(ngModel)]="prefix" (mousedown)="setCountryCode()" readonly col-1 class="country-prefix">
+      </ion-input>
+      <ion-input type="tel" placeholder="Phone number" [(ngModel)]="phonenumber" (ngModelChange)="checkNumber()"
+        class="phone-number">
+      </ion-input>
+      <button *ngIf="clearStatus" ion-button clear type="button" item-right (click)="clearNumber()"
+        class="show-btn"></button>
+    </ion-item>
+  </ion-list>
+  <button class="standard-btn" ion-button (tap)="verifyphone()" type="submit">Request Code</button>
+</ion-content>

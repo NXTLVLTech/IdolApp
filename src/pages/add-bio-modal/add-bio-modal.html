@@ -1,0 +1,15 @@
+<ion-content no-padding>
+  <div class="social-modal">
+    <div padding>
+      <img src="assets/icon/bio-icon.png" />
+      <p class="social-title">Add Bio</p>
+      <p class="social-desc">Please provide your bio to save in your profile</p>
+      <ion-textarea [(ngModel)]="social_link" placeholder="Bio" rows=3>
+      </ion-textarea>
+    </div>
+    <div class="action-buttons">
+      <button ion-button tappable (click)="cancel()">Cancel</button>
+      <button ion-button tappable (click)="save()">Save</button>
+    </div>
+  </div>
+</ion-content>

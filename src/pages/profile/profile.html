@@ -1,0 +1,12 @@
+<ion-content no-padding class="idolContent no-scroll" (swipeleft)="swipeLeft()" (swiperight)="swipeRight()">
+  <div class='profile-header'>
+    <img class="plus-icon" src="assets/icon/plus-icon.png" tappable (click)="goAddFriend()">
+    <h5>{{appusername}}</h5>
+    <ion-icon class='notification-icon' name="notifications" tappable (click)="goNotification()"></ion-icon>
+    <ion-badge *ngIf="notification_badge>0" class='badge' tappable (click)="goNotification()">{{notification_badge}}
+    </ion-badge>
+  </div>
+  <img no-scroll class="qr-code-img" [src]="qrcode ? qrcode : 'assets/images/default-qr-code.png'">
+  <p class="qr-description">This QR code contains all your Social Data. Scan a person’s QR to exchange information.</p>
+  <button class="scan-btn" ion-button (tap)="scanBarcode()">SCAN QR</button>
+</ion-content>

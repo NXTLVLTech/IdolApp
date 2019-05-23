@@ -1,0 +1,19 @@
+{
+  "name": "qrcode_tool",
+  "version": "0.0.1",
+  "description": "\"Custom QR Code Scanner and Generator\"",
+  "cordova": {
+    "id": "cordova-plugin-qrcode_tool",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "Sameske",
+  "license": "ISC"
+}

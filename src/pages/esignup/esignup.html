@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-buttons left>
+    <button ion-button navPop large>
+      <ion-icon class="idolIcon" name="arrow-back"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="background">
+  <div class="logo-title">
+    <img alt="logo" src="assets/images/logo-icon.svg">
+  </div>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
+    <ion-list no-line class="standard-list">
+      <div *ngIf="signupForm.controls['username'].hasError('required') && signupForm.controls['username'].touched"
+        class="error">
+        *username is required!
+      </div>
+      <ion-item>
+        <ion-input type="text" placeholder="Full Name" [formControl]="signupForm.controls['username']"></ion-input>
+      </ion-item>
+
+      <div *ngIf="signupForm.controls['useremail'].hasError('email') && signupForm.controls['useremail'].touched"
+        class="error">
+        *Invalid Email Addrees!
+      </div>
+
+      <ion-item>
+        <ion-input type="email" placeholder="Email" [formControl]="signupForm.controls['useremail']"></ion-input>
+      </ion-item>
+
+      <div
+        *ngIf="signupForm.controls['userpassword'].hasError('required') && signupForm.controls['userpassword'].touched"
+        class="error">
+        *password is required!
+      </div>
+      <div
+        *ngIf="signupForm.controls['userpassword'].hasError('minlength') && signupForm.controls['userpassword'].touched"
+        class="error">
+        *minimu password length is 6!
+      </div>
+
+      <div *ngIf="signupForm.hasError('isMatching') && signupForm.controls['confirmpassword'].touched" class="error">
+        *password no match!
+      </div>
+
+      <ion-item>
+        <ion-input type="{{type}}" placeholder="Password" [formControl]="signupForm.controls['userpassword']">
+        </ion-input>
+        <button ion-button clear type="button" item-right (click)="changePasswordStatus()"
+          class="show-btn">{{ showPass ? 'HIDE' : 'SHOW'}}</button>
+      </ion-item>
+      <button class="standard-btn" ion-button [disabled]="!signupForm.valid" type="submit">CREATE ACCOUNT</button>
+      <div class="sign-label">
+        <p>Already have an account? <a (click)="signIn()">Sign In</a></p>
+      </div>
+    </ion-list>
+
+  </form>
+
+</ion-content>

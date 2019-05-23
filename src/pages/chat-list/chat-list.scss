@@ -1,0 +1,42 @@
+page-chat-list {
+
+    .scroll-content,
+    .fixed-content {
+        background: #f5f7f7;
+    }
+
+    .idol-header {
+        .toolbar .toolbar-background {
+            border-bottom: none;
+        }
+
+        .back-button.show-back-button {
+            display: none;
+        }
+
+        .idolIcon {
+            color: white;
+        }
+
+        .ion-ios-add-circle-outline:before {
+            content: url('../assets/icon/add-circle-icon.png');
+        }
+    }
+
+    .searchbar .searchbar-input-container {
+        .searchbar-search-icon {
+            margin-top: 15px;
+            margin-left: 8px;
+        }
+
+        .searchbar-input {
+            padding: 32px 0 32px 38px;
+        }
+    }
+
+    .list ion-item-sliding.itemStyle {
+        background: #f5f7f7;
+        border-bottom: 1px solid #ffffff;
+    }
+
+}

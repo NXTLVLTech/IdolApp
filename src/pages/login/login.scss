@@ -1,0 +1,243 @@
+page-login {
+    .idolContent {
+        background-image: url("../assets/images/login_background.png");
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: cover;
+    }
+
+    img.logo {
+        position: absolute;
+        top: 80px;
+        left: calc(50% - 58px);
+        display: block !important;
+        margin: auto !important;
+    }
+
+    .button-group {
+        position: absolute;
+        width: 100%;
+        width: calc(100% - 40px);
+        bottom: 55px;
+
+        button.facebook-btn {
+            background-image: unset;
+            background-color: #adabb1;
+        }
+    }
+
+    .divider {
+        text-align: center;
+        margin: 24px auto;
+        line-height: 0.1;
+    }
+
+    .divider span {
+        display: inline-block;
+        position: relative;
+        color: #fff;
+    }
+
+    .divider span:before,
+    .divider span:after {
+        content: "";
+        position: absolute;
+        border-top: 1px solid white;
+        top: 0;
+        width: 90px;
+    }
+
+    .divider span:before {
+        right: 100%;
+        margin-right: 15px;
+    }
+
+    .divider span:after {
+        left: 100%;
+        margin-left: 15px;
+    }
+
+    .facebook-icon:before {
+        content: "";
+        width: 8px;
+        height: 18px;
+        display: inline-block;
+        background-image: url(../../assets/icon/facebook-icon.png);
+        background-size: 8px 18px;
+        margin-right: 15px;
+    }
+
+    .footer-buttons {
+        padding: 0 32px;
+        margin-bottom: 36px;
+
+        button {
+            font-size: 10px;
+            color: #fff;
+            background: transparent;
+            line-height: 13px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .create-btn {
+            float: left;
+        }
+
+        .forgot-btn {
+            float: right;
+        }
+    }
+
+
+
+    .idolImage {
+        margin-top: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .idolLoginButton {
+        margin-top: 16em;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        text-transform: capitalize;
+        color: white;
+        display: block;
+        width: 80%;
+        font-size: 2em;
+        height: 2em;
+        background-color: #3b5998;
+        border-radius: 5px;
+    }
+
+    .idolTOC {
+        margin-top: 2% !important;
+        font-size: small;
+        margin-left: auto;
+        margin-right: auto;
+        text-decoration: underline;
+        display: block;
+        color: white;
+        height: 10px;
+    }
+
+    .idolFBBtnAnimation {
+        margin-top: 110%;
+        margin-left: auto;
+        margin-right: auto;
+        text-transform: capitalize;
+        background-color: transparent;
+        display: block;
+        width: 85%;
+        height: 35px;
+        background-color: #008fc6;
+        border-radius: 40px;
+        border-color: white;
+        border-style: solid;
+        border-width: 1px;
+
+        animation: fadeup 1s forwards;
+        animation-duration: 1s;
+        animation-delay: 2s;
+        animation-iteration-count: 1;
+        opacity: 0;
+    }
+
+    .idolgoogleBtnAnimation {
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        text-transform: capitalize;
+        background-color: transparent;
+        display: block;
+        width: 85%;
+        height: 35px;
+        background-color: #008fc6;
+        border-radius: 40px;
+        border-color: white;
+        border-style: solid;
+        border-width: 1px;
+        animation: fadeup 1s forwards;
+        animation-duration: 1s;
+        animation-delay: 2s;
+        animation-iteration-count: 1;
+        opacity: 0;
+    }
+
+
+    .idolemailBtnAnimation {
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        text-transform: capitalize;
+        background-color: transparent;
+        display: block;
+        width: 85%;
+        height: 35px;
+        background-color: #008fc6;
+        border-radius: 40px;
+        border-color: white;
+        border-style: solid;
+        border-width: 1px;
+        animation: fadeup 1s forwards;
+        animation-duration: 1s;
+        animation-delay: 2s;
+        animation-iteration-count: 1;
+        opacity: 0;
+    }
+
+    .fbicon {
+        font-size: 1.6em;
+        margin-right: 10px;
+    }
+
+    .googleicon {
+        font-size: 1.6em;
+        margin-right: 28px;
+    }
+
+    .idolTermsAnimation {
+        animation: fadeup 1s forwards;
+        animation-duration: 1s;
+        animation-delay: 2.5s;
+        animation-iteration-count: 1;
+        opacity: 0;
+    }
+
+    @keyframes fadeup {
+        0% {
+            opacity: 0;
+            top: 4px
+        }
+
+        25% {
+            opacity: 0.25;
+            top: 3px
+        }
+
+        50% {
+            opacity: 0.5;
+            top: 2px
+        }
+
+        75% {
+            opacity: 0.75;
+            top: 1px
+        }
+
+        100% {
+            opacity: 1;
+            top: 0px
+        }
+    }
+
+}
+
+.button-md {
+    background-color: transparent;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0);
+}

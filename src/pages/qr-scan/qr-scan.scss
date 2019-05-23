@@ -1,0 +1,69 @@
+page-qr-scan {
+    ion-content.content {
+        background-image: linear-gradient(153deg, #0D1F3B, #1B2E4B);
+    }
+
+    .idol-header .toolbar .toolbar-background {
+        background-image: linear-gradient(153deg, #0D1F3B, #10233f);
+    }
+
+    .ion-ios-chatbubbles:before {
+        content: url('../assets/icon/chatbubbles-icon.png');
+    }
+
+    .profile-header {
+        text-align: center;
+        padding: 16px 0 4px 0;
+
+        img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+        }
+
+        h3 {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        p {
+            opacity: 0.6;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 19px;
+            margin-top: 0px;
+        }
+    }
+
+    .profile-grid .row {
+        .col p {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 19px;
+            margin: 8px auto;
+        }
+
+        .col:first-child p {
+            opacity: 0.6;
+        }
+    }
+
+    .social-label {
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1.636364px;
+    }
+
+    button.no-background-btn {
+        color: #ffffff;
+    }
+
+}

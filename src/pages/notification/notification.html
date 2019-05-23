@@ -1,0 +1,61 @@
+<ion-header class="idol-header">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button navPop large>
+        <ion-icon class="idolIcon" name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Notifications</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-segment class='segment-buttons' [(ngModel)]="type">
+    <ion-segment-button value='friend_requests'>Requests
+      <ion-badge *ngIf="listRequests.length>0">{{listRequests.length}}</ion-badge>
+    </ion-segment-button>
+    <ion-segment-button value='messages'>Messages
+      <ion-badge *ngIf="listMessages.length>0">{{listMessages.length}}</ion-badge>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'friend_requests'">
+      <ion-item *ngFor="let item of listRequests; let i=index;">
+        <ion-avatar item-left tappable (click)="goProfile(item)">
+          <img *ngIf="item.photourl" src="{{item.photourl}}" />
+          <img *ngIf="!item.photourl" src="assets/images/avatar.png" />
+        </ion-avatar>
+        <div>
+          <h2 tappable (click)="goProfile(item)">{{item.username}}</h2>
+          <div class='buttons'>
+            <button class='bt bt_confirm' tappable (click)="confirm(item, i)">Confirm</button>
+            <button class='bt' tappable (click)="delete(item, i)">Delete</button>
+          </div>
+        </div>
+      </ion-item>
+      <div class='noresult' *ngIf="listRequests.length == 0">
+        <img src="assets/icon/request-icon.png">
+        <h2>No new friend requests</h2>
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'messages'" class='messages'>
+      <ion-item *ngFor="let item of listMessages; let i=index;" tappable (click)="gotoChat(item)">
+        <ion-avatar item-left tappable>
+          <img *ngIf="item.UserAvatar" src="{{item.UserAvatar}}" />
+          <img *ngIf="!item.UserAvatar" src="assets/images/avatar.png" />
+        </ion-avatar>
+        <div>
+          <h2 tappable>{{item.UserName}}</h2>
+          <p>{{item.message}}</p>
+          <span class='time'>{{item.SendTime | relativeTime}}</span>
+        </div>
+      </ion-item>
+      <div class='noresult' *ngIf="listMessages.length == 0">
+        <img src="assets/icon/no-message-icon.png">
+        <h2>No new messages</h2>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

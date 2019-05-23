@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-qrcode_tool" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+     <name>qrcode_tool</name>
+        <js-module name="qrcode_tool" src="www/qrcode_tool.js">
+            <clobbers target="qrcode_tool" />
+        </js-module>
+            <platform name="ios">
+                <config-file parent="/*" target="config.xml">
+                    <feature name="qrcode_tool"><param name="ios-package" value="qrcode_tool" />
+                    </feature>
+                </config-file>
+                <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+                    <string>The app would like to access camera to to function properly.</string>
+                </config-file><source-file src="src/ios/qrcode_tool.m" />
+
+                    <header-file src="src/ios/DYQRCodeDecoderViewController.h" />
+                    <source-file src="src/ios/DYQRCodeDecoderViewController.m" />
+                    <header-file src="src/ios/CustomQRCode.h" />
+                    <source-file src="src/ios/CustomQRCode.m" />
+                    <resource-file src="src/ios/Cancel-Active.png" />
+                    <resource-file src="src/ios/Cancel-Default.png" />
+                    <resource-file src="src/ios/img_animation_scan_line.png" />
+                    <resource-file src="src/ios/img_animation_scan_pic.png" />
+                    <resource-file src="src/ios/Light-Active.png" />
+                    <resource-file src="src/ios/Light-Default.png" />
+
+        </platform>
+
+        <platform name="android">
+            <config-file parent="/*" target="res/xml/config.xml">
+                <feature name="qrcode_tool">
+                     <param name="android-package" value="cordova.plugin.qrcode_tool" />
+                </feature>
+            </config-file>
+            <config-file parent="/*" target="AndroidManifest.xml">
+            	     <uses-permission android:name="android.permission.CAMERA"/>	  
+			        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>	  	    
+			        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+            </config-file>
+
+            <config-file target="AndroidManifest.xml" parent="/manifest/application">
+                    <activity 
+                        android:configChanges="orientation"
+                        android:screenOrientation="portrait" 
+                        android:name="cordova.plugin.ScanActivity" 
+                        android:theme="@android:style/Theme.DeviceDefault.NoActionBar" 
+                        android:windowSoftInputMode="adjustResize">
+                        <intent-filter android:label="@string/launcher_name">
+                            <action android:name="android.intent.action.DEFAULT" />                
+                        </intent-filter>
+                    </activity>
+            </config-file>
+
+            <source-file src="src/android/qrcode_tool.java" target-dir="src/cordova/plugin" />
+            <source-file src="src/android/ScanActivity.java" target-dir="src/cordova/plugin" />           
+            <source-file src="src/android/Global.java" target-dir="src/cordova/plugin" />       
+            <source-file src="src/android/QrGenerator.java" target-dir="src/cordova/plugin" />   
+
+            <source-file src="src/android/res/drawable-xhdpi/cancel_active.png" target-dir="res/drawable-xhdpi" />
+            <source-file src="src/android/res/drawable-xhdpi/cancel_default.png" target-dir="res/drawable-xhdpi" />
+            <source-file src="src/android/res/drawable-xhdpi/light_active.png" target-dir="res/drawable-xhdpi" />
+            <source-file src="src/android/res/drawable-xhdpi/light_default.png" target-dir="res/drawable-xhdpi" />
+            <source-file src="src/android/res/drawable-xhdpi/scan_square.png" target-dir="res/drawable-xhdpi" />
+
+            <source-file src="src/android/res/layout/activity_scan.xml" target-dir="res/layout" />
+            
+            <framework src="com.android.support:support-v13:25.1.1+" /> 
+            <framework src="me.dm7.barcodescanner:zxing:1.9.8" />
+            <framework src ="com.android.support:multidex:1.0.0" /> 
+
+        </platform>
+</plugin>
+
+
+

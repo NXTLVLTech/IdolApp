@@ -1,0 +1,25 @@
+<ion-header no-header>
+</ion-header>
+
+<ion-content padding class="idolContent" [ngClass]="{'slide2-content': currentIndex === 1}">
+  <img class='logo' src='assets/images/login_logo.png' />
+</ion-content>
+
+<ion-footer>
+  <div class="backdrop"></div>
+  <ion-slides pager spaceBetween="10" (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+      <img src='assets/images/app-slide1-icon.png' />
+      <h5 class="sub-title">WHAT IS IDOL ABOUT?</h5>
+      <p class="description">Idol makes contacts and social media information exchange simpler, faster, and more
+        efficient for the everyday person in real time.</p>
+    </ion-slide>
+    <ion-slide>
+      <img src='assets/images/app-slide2-icon.png' />
+      <h5 class="sub-title">HOW DOES IT WORK?</h5>
+      <p class="description">Scan another user’s QR code to exchange your contact and social media information
+        instantly. The Social ID card is saved in your Contacts.</p>
+    </ion-slide>
+  </ion-slides>
+  <button class="standard-btn" ion-button (tap)="clickLogin()">Continue</button>
+</ion-footer>

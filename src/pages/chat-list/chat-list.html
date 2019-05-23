@@ -1,0 +1,46 @@
+<ion-header class="idol-header">
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button navPop large>
+        <ion-icon class="idolIcon" name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Messages</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="newChat()">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class="idolContent " (swiperight)="swipeRight()">
+  <ion-searchbar (ionInput)="filter($event)" placeholder="Search" no-padding></ion-searchbar>
+  <ion-list no-padding>
+    <ion-item-sliding *ngFor="let contact of myContacts; let i=index;" class="itemStyle">
+      <button ion-item detail-none (tap)="gotoChat(contact)" style="background:transparent;border-bottom: none;">
+        <ion-row *ngIf="contact?.toUserId === appuserid">
+          <ion-col justify-content-start col-3>
+            <img class="fbPic" src="{{contact.UserAvatar}}" onerror="this.src='assets/images/profile-default.png'">
+          </ion-col>
+          <ion-col align-self-center no-padding col-9>
+            <h2> {{contact.UserName}}</h2>
+            <h5 style="padding-left: 5px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+              {{contact.message}}</h5>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="contact?.toUserId != appuserid">
+          <ion-col justify-content-start col-3>
+            <img class="fbPic" src="{{contact.toUserAvatar}}" onerror="this.src='assets/images/profile-default.png'">
+          </ion-col>
+
+          <ion-col align-self-center no-padding col-9>
+            <h2> {{contact.toUserName}}</h2>
+            <h5 style="padding-left: 5px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+              {{contact.message}}</h5>
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-content no-padding>
+  <div class="social-modal">
+    <div padding>
+      <img src="assets/icon/{{socialData.icon}}" />
+      <p class="social-title">{{socialData.title}}</p>
+      <p [innerHTML]="socialData.description" class="social-desc"></p>
+      <p *ngIf="socialData.link" class="link">{{socialData.link}}</p>
+      <ion-input type="text" [(ngModel)]="social_link" clearInput placeholder="{{socialData.placeholder}}"></ion-input>
+    </div>
+    <div class="action-buttons">
+      <button ion-button tappable (click)="cancel()">Cancel</button>
+      <button ion-button tappable (click)="save()">Save</button>
+    </div>
+  </div>
+</ion-content>

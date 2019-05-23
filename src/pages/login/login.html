@@ -1,0 +1,17 @@
+<ion-content padding class="idolContent">
+  <img class='logo' src='assets/images/login_logo.png' />
+  <div class="button-group">
+    <button class="standard-btn" ion-button (tap)="clickemailLogin()">SIGN IN</button>    
+    <p class="divider"><span>OR</span></p>
+    <button class="facebook-btn standard-btn" ion-button (tap)="clickfbLogin()">
+      <ion-icon name="logo-facebook" class="facebook-icon"></ion-icon>
+      CONTINUE WITH FACEBOOK
+    </button>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer-buttons">
+    <button class="create-btn" (tap)="createAccount()">CREATE ACCOUNT</button>
+    <button class="forgot-btn" (tap)="forgotPassword()">FORGOT PASSWORD?</button>
+  </div>
+</ion-footer>

@@ -1,0 +1,113 @@
+page-add-friend {
+    .add-friends-icon:before {
+        content: url('../assets/icon/add-friends-icon.png');
+    }
+
+    .searchbar .searchbar-input-container {
+        .searchbar-search-icon {
+            margin-top: 15px;
+            margin-left: 8px;
+        }
+
+        .searchbar-input {
+            padding: 32px 0 32px 38px;
+        }
+    }
+
+    .noresult {
+        text-align: center;
+        color: #3b3b4d;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    // ion-content {
+    //     background-image:  url("../assets/images/app_background.png");
+    //     background-repeat: no-repeat;
+    //     background-position: 100% 100%;
+    //     background-size:cover;
+    // }
+
+    // .idolTitle {
+    //     position: absolute;
+    //     color: white;
+    //     text-align: center ;
+    //     width: 200px;
+    //     margin-left: calc(50% - 150px);
+    //     margin-top: 15px;
+    //     font-size: 2.6rem
+    // }
+    // .search_bar {
+    //     margin-top: 20px;
+    //     height: 60px;
+    //     ion-input {
+    //         background: white;
+    //         border-radius: 20px;
+    //         width: calc(100% - 50px);       
+    //         float: left; 
+    //         padding: 0px 10px;
+    //         .text-input {
+    //             color: #333;
+    //             font-size: 20px;
+    //             margin: 10px 20px;
+    //             letter-spacing: 1px;
+    //         }
+    //     }
+    //     ion-icon.icon_search {
+    //         color: white;
+    //         font-size: 28px;
+    //         float: right;
+    //         margin-top: 8px;
+    //         margin-right: 10px;
+    //     }
+    // }
+    // ion-segment.segment-buttons {
+    //     color: white;
+    //     ion-segment-button.segment-button {
+    //         color: #eee;
+    //         border-bottom-color: rgba(255,255,255, 0.5);
+    //     }
+    //     ion-segment-button.segment-button.segment-activated {
+    //         border-bottom-color: white;
+    //     }
+    // }
+    // ion-list {
+    //     .noresult {
+    //         h2 {
+    //             padding: 20px 0px;
+    //             color: #aaa;
+    //             text-align: center;
+    //             font-size: 24px;
+    //         }
+    //     }
+    //     margin-top: 20px;
+    //     ion-item.item {
+    //         padding-left: 0px;
+    //         background: transparent;
+    //         ion-avatar {
+    //             width: 60px ;
+    //             height: 60px;
+    //         }
+    //         ion-avatar img {
+    //             width: 60px ;
+    //             height: 60px;
+    //             display: block;
+    //             border: 5px solid  #0070c1;
+    //             background-color: #0070c1;
+    //             border-radius: 100%;
+    //         }
+    //         h2 {
+    //             color: white;
+    //             width: calc(100% - 10px);
+    //         }
+    //         ion-icon {
+    //             color: white;
+    //             position: absolute;
+    //             right: 2px;
+    //             top: 20px;
+    //             font-size: 22px;
+    //         }
+    //     }
+    // }
+}

@@ -1,0 +1,103 @@
+<ion-header class="idol-header">
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button navPop large>
+        <ion-icon class="idolIcon" name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Social ID</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="gotonewChat()">
+        <ion-icon slot="icon-only" name="chatbubbles"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="idolContent">
+  <div class='profile-header'>
+    <img src={{photourl}} (click)="fullPic(photourl)" onerror="this.src='assets/images/profile-default.png'">
+    <h3>{{name}}</h3>
+    <p>{{profile}}</p>
+  </div>
+
+  <ng-container *ngIf="mode != 'view'">
+    <ion-list no-padding no-lines no-margin>
+      <ion-grid class="profile-grid">
+        <ion-row *ngIf="shareBirthday === true && isBirthdayHidden">
+          <ion-col col-5>
+            <p>Birthday:</p>
+          </ion-col>
+          <ion-col col-7>
+            <p>{{birthday}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="shareLocation === true && isLocationHidden">
+          <ion-col col-5>
+            <p>Hometown:</p>
+          </ion-col>
+          <ion-col col-7>
+            <p>{{location}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="sharePhone === true && isPhoneHidden" (tap)="callPhone(phone)">
+          <ion-col col-5>
+            <p>Phone:</p>
+          </ion-col>
+          <ion-col col-7>
+            <p>{{phone}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="shareEmail === true && isEmailHidden" (tap)="sendEmail(email)" (clicked)="sendEmail(email)">
+          <ion-col col-5>
+            <p>Email:</p>
+          </ion-col>
+          <ion-col col-7>
+            <p>{{email}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="shareEmail === true && isWebsiteHidden" (click)="socialLink('web',website)">
+          <ion-col col-5>
+            <p>Website:</p>
+          </ion-col>
+          <ion-col col-7>
+            <p>{{website}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+
+    <p class="social-label">Social</p>
+
+    <ion-list text-center no-margin>
+      <ion-row>
+        <ion-col col-3 *ngIf="shareFacebook === true">
+          <img src='assets/icon/socialFacebook.png' (click)="socialLink('facebook', fbLink)" />
+        </ion-col>
+        <ion-col col-3 *ngIf="shareTwitter === true">
+          <img src='assets/icon/socialTwitter.svg' (click)="socialLink('twitter', twitterLink)" />
+        </ion-col>
+        <ion-col col-3 *ngIf="shareLinkedin === true">
+          <img src='assets/icon/linkedin-icon.png' (click)="socialLink('linkedin', linkedinLink)" />
+        </ion-col>
+        <ion-col col-3 *ngIf="shareSnapchat === true">
+          <img src='assets/icon/snapchat-icon.png' (click)="socialLink('snapchat', snapchatLink)" />
+        </ion-col>
+        <ion-col col-3 *ngIf="shareYoutube === true">
+          <img src='assets/icon/youtube-icon.png' (click)="socialLink('youtube', youtubeLink)" />
+        </ion-col>
+        <ion-col col-3 *ngIf="shareMusical === true">
+          <img src='assets/icon/soundcloud-icon.png' (click)="socialLink('musical', musicalLink)" />
+        </ion-col>
+        <ion-col col-3 *ngIf="shareInstagram === true">
+          <img src='assets/icon/instagram-icon.png' (click)="socialLink('instagram', instagramLink)" />
+        </ion-col>
+        <ion-col col-3 *ngIf="sharePinterest === true">
+          <img src='assets/icon/pinterest-icon.png' (click)="socialLink('pinterest', pinterestLink)" />
+        </ion-col>
+      </ion-row>
+    </ion-list>
+    <button class="standard-btn" ion-button (tap)="saveContactAction()">Save</button>
+    <button class="no-background-btn" ion-button (tap)="deleteinfo()">Delete</button>
+  </ng-container>
+</ion-content>

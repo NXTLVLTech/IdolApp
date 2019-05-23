@@ -1,0 +1,61 @@
+page-home {
+
+    //Qr code tab
+    .ion-ios-codeIcon,
+    .ion-md-codeIcon {
+        content: url('../assets/icon/barcode-icon.png');
+        background-position: 0 5px;
+        padding-right: 2px;
+        padding-left: 2px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        margin: 0 auto;
+        width: auto;
+        height: 70px !important;
+        margin-bottom: 45px !important;
+    }
+
+    .ion-ios-codeIcon-outline,
+    .ion-md-codeIcon-outline {
+        content: url('../assets/icon/barcode-icon.png');
+        background-position: 0 5px;
+        padding-right: 2px;
+        padding-left: 2px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        margin: 0 auto;
+        width: auto;
+        height: 70px !important;
+        margin-bottom: 45px !important;
+    }
+
+    .tabs {
+        #tab-t0-0.tab-button .tab-button-icon {
+            content: url('../assets/icon/profile-inactive.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        #tab-t0-2.tab-button .tab-button-icon {
+            content: url('../assets/icon/contacts-inactive.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        .tab-button[aria-selected=true] {
+            color: #3c80ea;
+        }
+
+        #tab-t0-0[aria-selected=true] .tab-button-icon {
+            content: url('../assets/icon/profile-active.png');
+        }
+
+        #tab-t0-2[aria-selected=true] .tab-button-icon {
+            content: url('../assets/icon/contacts-active.png');
+        }
+    }
+}

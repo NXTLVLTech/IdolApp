@@ -1,0 +1,270 @@
+page-contact-list {
+
+    .ion-ios-cloud-upload:before {
+        content: url('../assets/icon/cloud-upload-icon.png');
+    }
+
+    .ion-ios-chatbubbles:before {
+        content: url('../assets/icon/chatbubbles-icon.png');
+    }
+
+    .noMargin {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .idolTitle {
+        color: white !important;
+        text-align: center;
+        font-size: 2.2em;
+        position: absolute;
+        margin-top: 25px;
+        margin-left: calc(50% - 65px);
+    }
+
+    .restoreIcon {
+        width: 40px;
+        height: 40px;
+        background: transparent;
+    }
+
+    .itemStyle {
+        background: transparent !important;
+    }
+
+    .idolLabel {
+        color: #020729;
+        font-weight: bold;
+    }
+
+    .idolInput {
+        color: #020729;
+        font-weight: bold;
+    }
+
+    .idolIcon {
+        font-size: 2.3em;
+        color: white;
+    }
+
+    .idolIcon2 {
+        font-size: 2.3em;
+        color: black;
+    }
+
+    .idolNewContact {
+        background-color: #008fc6;
+        color: white;
+        text-align: center;
+        font-size: 0.8em;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 2px;
+
+    }
+
+    .fbPic {
+        width: 60px;
+        height: 60px;
+        display: block;
+        border: 5px solid #0070c1;
+        background-color: #0070c1;
+        border-radius: 100%;
+    }
+
+    .fbPicCard {
+
+        width: 100%;
+        height: 20%;
+    }
+
+    .idolList {
+        background-color: lightgrey;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+        margin-top: 2%;
+    }
+
+    .idolText {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: auto;
+        color: #020729;
+        border-color: #020729;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 0px;
+        background-color: white;
+        width: 100%;
+    }
+
+    .idolItem {
+        color: black;
+    }
+
+    .idolGrid {
+        margin-top: 2%;
+        margin-left: auto;
+        width: 90%;
+        border-radius: 5px;
+        padding: 0px;
+    }
+
+    .ion-alpha-sidebar {
+        position: fixed;
+        right: 0;
+        display: flex;
+        flex-flow: column;
+        z-index: 50000;
+        margin: 10px 0px 0px 20px;
+    }
+
+    .ion-alpha-sidebar li {
+        flex: 1 1 auto;
+        list-style: none;
+        width: 20px;
+        text-align: center;
+        height: 13px;
+    }
+
+    .ion-alpha-sidebar li a {
+        font-size: 10px;
+        color: white;
+    }
+
+    .ion-alpha-sidebar li a.selected {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .dividerStyle {
+        font-size: 16px;
+        color: white;
+        background: rgba(10, 10, 10, 0.35)
+    }
+
+    .bottomSpace {
+        position: absolute;
+        margin-top: 15px;
+        width: 100%;
+        height: 30px;
+    }
+
+}
+
+.searchbar-ios {
+    padding: 0 8px;
+    min-height: 44px;
+    border-top: 0.55px solid transparent;
+    border-bottom: 0.55px solid rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
+
+    .searchbar-input {
+        padding: 0 28px;
+        height: 3rem;
+        border-radius: 5px;
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: #fff;
+    }
+
+    .searchbar-input::-webkit-input-placeholder {
+        color: #6c7b8a;
+        text-indent: 0;
+    }
+
+    .searchbar-input::-moz-placeholder {
+        color: #6c7b8a;
+    }
+
+    .searchbar-input:-ms-input-placeholder {
+        color: #6c7b8a;
+    }
+}
+
+.searchbar-md {
+    padding: 0 8px;
+    min-height: 44px;
+    border-top: 0.55px solid transparent;
+    border-bottom: 0.55px solid rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
+
+    .searchbar-input {
+        padding: 0 28px;
+        height: 3rem;
+        border-radius: 5px;
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: #6c7b8a;
+    }
+
+    .searchbar-input::-webkit-input-placeholder {
+        color: #6c7b8a;
+        text-indent: 0;
+    }
+
+    .searchbar-input::-moz-placeholder {
+        color: #6c7b8a;
+    }
+
+    .searchbar-input:-ms-input-placeholder {
+        color: #6c7b8a;
+    }
+}
+
+.searchbar-ios .searchbar-search-icon {
+    filter: invert(100);
+}
+
+.searchbar-md .searchbar-search-icon {
+    top: 6px;
+    left: 6px;
+    width: 21px;
+    height: 21px;
+    filter: invert(100);
+}
+
+
+.searchbar-ios .searchbar-clear-icon {
+    filter: invert(100);
+}
+
+.searchbar-md .searchbar-clear-icon {
+    filter: invert(100);
+}
+
+.ion-alpha-scroll scroll-content::-webkit-scrollbar {
+    display: none;
+}
+
+.item-ios.item-block .item-inner {
+    padding-right: 8px;
+    border-bottom: 0px solid #c8c7cc;
+}
+
+.ion-item-sliding {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+.virtual-scroll .virtual-position,
+.virtual-scroll .virtual-position.item {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    transition-duration: 0ms;
+    contain: content;
+
+}
+
+.list-ios {
+    margin: -1px 0 50px 0;
+}

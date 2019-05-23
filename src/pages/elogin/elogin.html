@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-buttons left>
+    <button ion-button navPop large>
+      <ion-icon class="idolIcon" name="arrow-back"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="background">
+  <div class="logo-title">
+    <img alt="logo" src="assets/images/logo-icon.svg">
+  </div>
+  <form [formGroup]="signinForm" (ngSubmit)="onSubmit(signinForm.value)">
+    <ion-list no-line class="standard-list">
+      <div *ngIf="signinForm.controls['useremail'].hasError('email') && signinForm.controls['useremail'].touched"
+        class="error">
+        *Invalid Email Addrees!
+      </div>
+      <ion-item>
+        <ion-input type="text" placeholder="Email" [formControl]="signinForm.controls['useremail']"></ion-input>
+      </ion-item>
+      <div
+        *ngIf="signinForm.controls['userpassword'].hasError('required') && signinForm.controls['userpassword'].touched"
+        class="error">
+        *password is required!
+      </div>
+      <div
+        *ngIf="signinForm.controls['userpassword'].hasError('minlength') && signinForm.controls['userpassword'].touched"
+        class="error">
+        *minimu password length is 6!
+      </div>
+      <ion-item>
+        <ion-input type="{{type}}" placeholder="Password" [formControl]="signinForm.controls['userpassword']">
+        </ion-input>
+        <button ion-button clear type="button" item-right (click)="changePasswordStatus()"
+          class="show-btn">{{ showPass ? 'HIDE' : 'SHOW'}}</button>
+      </ion-item>
+      <button class="standard-btn" ion-button [disabled]="!signinForm.valid" type="submit">SIGN IN</button>
+      <div class="sign-label">
+        <p>Don't you have an account? <a (click)="createAccount()">Create account</a></p>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>
